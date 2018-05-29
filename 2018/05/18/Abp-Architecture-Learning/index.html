@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="Dotnet开源实战指南什么是Abp？Event Driven Architecture 事件驱动架构 Service-oriented architecture 面向服务架构 业务服务结构图 服务部署网络拓扑图 开发模式转变  前后端分离，前端SPA化，后端服务化，独立部署 Git分支策略  监控工具，日志分析工具  DevOps实践  TFS 敏捷开发管理 持续集成 发布过程管理  日志分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://cooperliu.github.io/blogs.io/2017/08/21/hello-world/index.html">
+<meta property="og:title" content="Abp Architecture Learning">
+<meta property="og:url" content="https://cooperliu.github.io/blogs.io/2018/05/18/Abp-Architecture-Learning/index.html">
 <meta property="og:site_name" content="Cooperliu&#39;s Blogs">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Dotnet开源实战指南什么是Abp？Event Driven Architecture 事件驱动架构 Service-oriented architecture 面向服务架构 业务服务结构图 服务部署网络拓扑图 开发模式转变  前后端分离，前端SPA化，后端服务化，独立部署 Git分支策略  监控工具，日志分析工具  DevOps实践  TFS 敏捷开发管理 持续集成 发布过程管理  日志分析">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-21T03:55:18.278Z">
+<meta property="og:updated_time" content="2018-05-19T05:16:58.417Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Abp Architecture Learning">
+<meta name="twitter:description" content="Dotnet开源实战指南什么是Abp？Event Driven Architecture 事件驱动架构 Service-oriented architecture 面向服务架构 业务服务结构图 服务部署网络拓扑图 开发模式转变  前后端分离，前端SPA化，后端服务化，独立部署 Git分支策略  监控工具，日志分析工具  DevOps实践  TFS 敏捷开发管理 持续集成 发布过程管理  日志分析">
 
 
 
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="https://cooperliu.github.io/blogs.io/2017/08/21/hello-world/"/>
+  <link rel="canonical" href="https://cooperliu.github.io/blogs.io/2018/05/18/Abp-Architecture-Learning/"/>
 
 
 
 
 
-  <title>Hello World | Cooperliu's Blogs</title>
+  <title>Abp Architecture Learning | Cooperliu's Blogs</title>
   
 
 
@@ -248,7 +248,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2017/08/21/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2018/05/18/Abp-Architecture-Learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cooperliu">
@@ -265,7 +265,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Abp Architecture Learning</h1>
         
 
         <div class="post-meta">
@@ -277,8 +277,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T11:55:18+08:00">
-                2017-08-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T22:10:06+08:00">
+                2018-05-18
               </time>
             
 
@@ -315,15 +315,34 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h1 id="Dotnet开源实战指南"><a href="#Dotnet开源实战指南" class="headerlink" title="Dotnet开源实战指南"></a>Dotnet开源实战指南</h1><h2 id="什么是Abp？"><a href="#什么是Abp？" class="headerlink" title="什么是Abp？"></a>什么是Abp？</h2><p>Event Driven Architecture 事件驱动架构</p>
+<p>Service-oriented architecture 面向服务架构</p>
+<p>业务服务结构图</p>
+<p>服务部署网络拓扑图</p>
+<p>开发模式转变</p>
+<ul>
+<li>前后端分离，前端SPA化，后端服务化，独立部署</li>
+<li>Git分支策略 </li>
+<li>监控工具，日志分析工具</li>
+</ul>
+<p>DevOps实践</p>
+<ul>
+<li>TFS 敏捷开发管理</li>
+<li>持续集成</li>
+<li>发布过程管理</li>
+</ul>
+<p>日志分析</p>
+<ul>
+<li>日志记录</li>
+<li>日志收集</li>
+<li>日志查询分析</li>
+</ul>
+<p>分布式消息管理</p>
+<ul>
+<li>分布式消息幂等</li>
+<li>分布式相同消息执行顺序</li>
+<li>分布式不同消息执行顺序</li>
+</ul>
 
       
     </div>
@@ -348,14 +367,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/blogs.io/2017/08/30/abp-exception-handling/" rel="next" title="Abp 业务异常及业务异常处理">
+                <i class="fa fa-chevron-left"></i> Abp 业务异常及业务异常处理
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blogs.io/2017/08/30/abp-exception-handling/" rel="prev" title="Abp 业务异常及业务异常处理">
-                Abp 业务异常及业务异常处理 <i class="fa fa-chevron-right"></i>
+              <a href="/blogs.io/2018/05/29/wepay-cash-pay-to-bank/" rel="prev" title="wepay-cash-pay-to-bank">
+                wepay-cash-pay-to-bank <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -483,7 +506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dotnet开源实战指南"><span class="nav-number">1.</span> <span class="nav-text">Dotnet开源实战指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Abp？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Abp？</span></a></li></ol></li></ol></div>
             
 
           </div>
