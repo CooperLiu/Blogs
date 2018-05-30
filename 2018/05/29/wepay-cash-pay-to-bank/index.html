@@ -79,7 +79,7 @@
 <link href="/blogs.io/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Abp,DDD,donet,donet core" />
+  <meta name="keywords" content="Wechat,微信,提现,银行卡,C#,Csharp,RSA,PKcs#8," />
 
 
 
@@ -95,13 +95,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cooperliu&#39;s Blogs">
-<meta property="og:url" content="https://cooperliu.github.io/blogs.io/index.html">
+<meta name="description" content="微信支付 企业付款到银行卡开发过程1. 业务背景微信支付付款到指定银行卡。商户可以将商户号余额付款至指定的收款银行账户。通过指定收款银行账户户名、卡号，以及收款银行信息即可实现付款。  注意事项：  企业付款至银行卡只支持新资金流类型账户  目前企业付款到银行卡支持17家银行，更多银行逐步开放中  付款到账实效为1-3日，最快次日到账  每笔按付款金额收取手续费，按金额0.1%收取，最低1元，最高">
+<meta name="keywords" content="Wechat,微信,提现,银行卡,C#,Csharp,RSA,PKcs#8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信提现到银行卡开发过程">
+<meta property="og:url" content="https://cooperliu.github.io/blogs.io/2018/05/29/wepay-cash-pay-to-bank/index.html">
 <meta property="og:site_name" content="Cooperliu&#39;s Blogs">
+<meta property="og:description" content="微信支付 企业付款到银行卡开发过程1. 业务背景微信支付付款到指定银行卡。商户可以将商户号余额付款至指定的收款银行账户。通过指定收款银行账户户名、卡号，以及收款银行信息即可实现付款。  注意事项：  企业付款至银行卡只支持新资金流类型账户  目前企业付款到银行卡支持17家银行，更多银行逐步开放中  付款到账实效为1-3日，最快次日到账  每笔按付款金额收取手续费，按金额0.1%收取，最低1元，最高">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://cooperliu.github.io/blogs.io/2018/05/29/wepay-cash-pay-to-bank/RsaPkcs1ConvertToPkcs8.gif">
+<meta property="og:image" content="https://cooperliu.github.io/blogs.io/2018/05/29/wepay-cash-pay-to-bank/wechat_reward_20180530104425-1527648613768.jpg">
+<meta property="og:updated_time" content="2018-05-30T02:55:18.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cooperliu&#39;s Blogs">
+<meta name="twitter:title" content="微信提现到银行卡开发过程">
+<meta name="twitter:description" content="微信支付 企业付款到银行卡开发过程1. 业务背景微信支付付款到指定银行卡。商户可以将商户号余额付款至指定的收款银行账户。通过指定收款银行账户户名、卡号，以及收款银行信息即可实现付款。  注意事项：  企业付款至银行卡只支持新资金流类型账户  目前企业付款到银行卡支持17家银行，更多银行逐步开放中  付款到账实效为1-3日，最快次日到账  每笔按付款金额收取手续费，按金额0.1%收取，最低1元，最高">
+<meta name="twitter:image" content="https://cooperliu.github.io/blogs.io/2018/05/29/wepay-cash-pay-to-bank/RsaPkcs1ConvertToPkcs8.gif">
 
 
 
@@ -131,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="https://cooperliu.github.io/blogs.io/"/>
+  <link rel="canonical" href="https://cooperliu.github.io/blogs.io/2018/05/29/wepay-cash-pay-to-bank/"/>
 
 
 
 
 
-  <title>Cooperliu's Blogs</title>
+  <title>微信提现到银行卡开发过程 | Cooperliu's Blogs</title>
   
 
 
@@ -156,8 +164,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -230,9 +237,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -262,9 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blogs.io/2018/05/29/wepay-cash-pay-to-bank/" itemprop="url">微信提现到银行卡开发过程</a></h1>
+          <h1 class="post-title" itemprop="name headline">微信提现到银行卡开发过程</h1>
         
 
         <div class="post-meta">
@@ -314,9 +319,7 @@
       
 
       
-        
-          
-            <h1 id="微信支付-企业付款到银行卡开发过程"><a href="#微信支付-企业付款到银行卡开发过程" class="headerlink" title="微信支付 企业付款到银行卡开发过程"></a>微信支付 企业付款到银行卡开发过程</h1><h2 id="1-业务背景"><a href="#1-业务背景" class="headerlink" title="1. 业务背景"></a>1. 业务背景</h2><p>微信支付付款到指定银行卡。商户可以将商户号余额付款至指定的收款银行账户。通过指定收款银行账户户名、卡号，以及收款银行信息即可实现付款。 </p>
+        <h1 id="微信支付-企业付款到银行卡开发过程"><a href="#微信支付-企业付款到银行卡开发过程" class="headerlink" title="微信支付 企业付款到银行卡开发过程"></a>微信支付 企业付款到银行卡开发过程</h1><h2 id="1-业务背景"><a href="#1-业务背景" class="headerlink" title="1. 业务背景"></a>1. 业务背景</h2><p>微信支付付款到指定银行卡。商户可以将商户号余额付款至指定的收款银行账户。通过指定收款银行账户户名、卡号，以及收款银行信息即可实现付款。 </p>
 <p>注意事项：</p>
 <ol>
 <li><p><strong>企业付款至银行卡只支持新资金流类型账户</strong></p>
@@ -449,8 +452,6 @@
 </ul>
 <h2 id="6-赞助"><a href="#6-赞助" class="headerlink" title="6. 赞助"></a>6. 赞助</h2><p><img src="/blogs.io/2018/05/29/wepay-cash-pay-to-bank/wechat_reward_20180530104425-1527648613768.jpg" alt="wechat_reward_20180530104425"></p>
 
-          
-        
       
     </div>
     
@@ -465,375 +466,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2018/05/18/Abp-Architecture-Learning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cooperliu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blogs.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cooperliu's Blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blogs.io/2018/05/18/Abp-Architecture-Learning/" itemprop="url">Abp Architecture Learning</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T22:10:06+08:00">
-                2018-05-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/blogs.io/tags/Wechat-微信-提现-银行卡-C-Csharp-RSA-PKcs-8/" rel="tag"># Wechat,微信,提现,银行卡,C#,Csharp,RSA,PKcs#8</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Dotnet开源实战指南"><a href="#Dotnet开源实战指南" class="headerlink" title="Dotnet开源实战指南"></a>Dotnet开源实战指南</h1><h2 id="什么是Abp？"><a href="#什么是Abp？" class="headerlink" title="什么是Abp？"></a>什么是Abp？</h2><p>Event Driven Architecture 事件驱动架构</p>
-<p>Service-oriented architecture 面向服务架构</p>
-<p>业务服务结构图</p>
-<p>服务部署网络拓扑图</p>
-<p>开发模式转变</p>
-<ul>
-<li>前后端分离，前端SPA化，后端服务化，独立部署</li>
-<li>Git分支策略 </li>
-<li>监控工具，日志分析工具</li>
-</ul>
-<p>DevOps实践</p>
-<ul>
-<li>TFS 敏捷开发管理</li>
-<li>持续集成</li>
-<li>发布过程管理</li>
-</ul>
-<p>日志分析</p>
-<ul>
-<li>日志记录</li>
-<li>日志收集</li>
-<li>日志查询分析</li>
-</ul>
-<p>分布式消息管理</p>
-<ul>
-<li>分布式消息幂等</li>
-<li>分布式相同消息执行顺序</li>
-<li>分布式不同消息执行顺序</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2017/08/30/abp-exception-handling/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cooperliu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blogs.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cooperliu's Blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blogs.io/2017/08/30/abp-exception-handling/" itemprop="url">Abp 业务异常及业务异常处理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T21:10:28+08:00">
-                2017-08-30
-              </time>
+              <a href="/blogs.io/2018/05/18/Abp-Architecture-Learning/" rel="next" title="Abp Architecture Learning">
+                <i class="fa fa-chevron-left"></i> Abp Architecture Learning
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="Abp异常处理"><a href="#Abp异常处理" class="headerlink" title="Abp异常处理"></a>Abp异常处理</h1><p>在使用Abp框架中，经常会遇到业务异常及系统异常处理，今天结合实际开发过程中，介绍一下如何在Abp框架中定义业务异常、处理业务异常及处理系统异常。</p>
-<h2 id="Abp常用异常"><a href="#Abp常用异常" class="headerlink" title="Abp常用异常"></a>Abp常用异常</h2><ul>
-<li>AbpException</li>
-<li>UserFriendlyException    <blockquote>
-<p><strong>UserFriendlyException</strong> 是一类特殊的异常，可以直接抛给用户展示系统异常信息，给用户提示警告。</p>
-</blockquote>
-</li>
-<li>AbpAuthorizationException</li>
-<li>AbpDbConcurrencyException</li>
-<li>EntityNotFoundException</li>
-<li>AbpRemoteCallException</li>
-</ul>
-<h2 id="Abp业务异常定义及异常处理"><a href="#Abp业务异常定义及异常处理" class="headerlink" title="Abp业务异常定义及异常处理"></a>Abp业务异常定义及异常处理</h2><p>在设计业务异常时，通常情况下是，用户操作违背了业务规范，系统提示业务异常。当然在Abp框架中，我们可以使用<strong>UserFriendlyException</strong>提示给用户。</p>
-<p>但是在使用UserFriendlyException异常时，我们发现其命名空间为Abp.UI的命名空间下，显而易见，UserFriendlyException应用的场景为应用服务中，而我们的业务异常通常发生在DomainService、AggregateRoot、BusinessService、Entity等领域服务中，与设计相悖。</p>
-<p>因此，我们设计业务异常时，需要考虑</p>
-<ol>
-<li>可以转化为<strong>UserFriendlyException</strong>异常，提示给用户</li>
-<li>自定义错误码</li>
-<li>自定义错误消息</li>
-</ol>
-<p>我们定义系统业务异常 ProjectBusinessException</p>
-<pre><code>using System;
-using Abp;
-using Abp.Logging;
-
-namespace Company.Project
-{
-    public class ProjectBusinessException : AbpException, IHasErrorCode, IHasLogSeverity
-    {
-        public LogSeverity Severity { get; set; } = LogSeverity.Warn;
-
-        public int Code { get; set; }
-
-
-        public ProjectBusinessException(ErrorCode errorCode)
-            : base(errorCode.ToString())
-        {
-            Code = (int)errorCode;
-        }
-
-        public ProjectBusinessException(ErrorCode errorCode, string message)
-            : base(message)
-        {
-            Code = (int)errorCode;
-        }
-
-        public ProjectBusinessException(ErrorCode errorCode, Exception innerException)
-            : base(errorCode.ToString(), innerException)
-        {
-            Code = (int)errorCode;
-        }
-
-        public ProjectBusinessException(ErrorCode errorCode, string message, Exception innerException)
-            : base(message, innerException)
-        {
-            Code = (int)errorCode;
-        }
-
-    }
-}
-</code></pre><p>在定义业务异常错误发现，枚举非常适合错误码的定义：枚举名称可以详细描述业务异常，枚举值可以定义为错误码。</p>
-<pre><code>`   using System.ComponentModel.DataAnnotations;
-
-    namespace Company.Project
-    {
-        public enum ErrorCode
-        {
-
-            #region 通用错误异常 0-99
-
-            /// &lt;summary&gt;
-            /// 未知异常
-            /// &lt;/summary&gt;
-            [Display(Name = &quot;未知异常&quot;)]
-            UnknownException = 0,
-
-            /// &lt;summary&gt;
-            /// 存在重复名称
-            /// &lt;/summary&gt;
-            [Display(Name = &quot;指定的对象存在重复&quot;)]
-            ExistDuplicateItem = 1,
-
-            /// &lt;summary&gt;
-            /// 指定对象未激活
-            /// &lt;/summary&gt;
-            [Display(Name = &quot;指定对象未激活&quot;)]
-            ObjectIsNotActive = 2,
-
-            #endregion
-
-
-        }
-    }
-
-`
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -843,138 +505,11 @@ namespace Company.Project
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2017/08/21/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cooperliu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blogs.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cooperliu's Blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blogs.io/2017/08/21/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T11:55:18+08:00">
-                2017-08-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -982,6 +517,10 @@ namespace Company.Project
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1002,8 +541,17 @@ namespace Company.Project
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/blogs.io/images/avatar.gif"
@@ -1058,6 +606,22 @@ namespace Company.Project
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信支付-企业付款到银行卡开发过程"><span class="nav-number">1.</span> <span class="nav-text">微信支付 企业付款到银行卡开发过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-业务背景"><span class="nav-number">1.1.</span> <span class="nav-text">1. 业务背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-支持银行"><span class="nav-number">1.2.</span> <span class="nav-text">2. 支持银行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-微信接口文档"><span class="nav-number">1.3.</span> <span class="nav-text">3. 微信接口文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-企业付款到银行卡API加密"><span class="nav-number">1.4.</span> <span class="nav-text">4. 企业付款到银行卡API加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-参考链接"><span class="nav-number">1.5.</span> <span class="nav-text">5. 参考链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-赞助"><span class="nav-number">1.6.</span> <span class="nav-text">6. 赞助</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1181,10 +745,10 @@ namespace Company.Project
 
 
   
-    <script type="text/javascript" src="/blogs.io/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/blogs.io/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/blogs.io/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
