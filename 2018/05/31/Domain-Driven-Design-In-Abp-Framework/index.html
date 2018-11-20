@@ -79,7 +79,7 @@
 <link href="/blogs.io/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Abp,DDD,donet,donet core" />
+  <meta name="keywords" content="DDD,Abp," />
 
 
 
@@ -95,17 +95,18 @@
 
 
 
-<meta name="description" content="Dotnet开源实战指南什么是Abp？Event Driven Architecture 事件驱动架构 Service-oriented architecture 面向服务架构 业务服务结构图 服务部署网络拓扑图 开发模式转变  前后端分离，前端SPA化，后端服务化，独立部署 Git分支策略  监控工具，日志分析工具  DevOps实践  TFS 敏捷开发管理 持续集成 发布过程管理  日志分析">
+<meta name="description" content="DDD领域服务Abp框架中应用1.领域服务（Domain Services） 领域服务 负责表达领域业务操作与规则，一个良好的领域服务设计，具备以下三个特点  领域操作与规则涉及到的领域概念既不属于实体（Entity）的一部分，也不属于值对象的一部分。  The interface is defined in terms of other elements of the domain model">
+<meta name="keywords" content="DDD,Abp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Abp Architecture Learning">
-<meta property="og:url" content="https://cooperliu.github.io/blogs.io/2018/05/18/Abp-Architecture-Learning/index.html">
+<meta property="og:title" content="Domain-Driven-Design-In-Abp-Framework">
+<meta property="og:url" content="https://cooperliu.github.io/blogs.io/2018/05/31/Domain-Driven-Design-In-Abp-Framework/index.html">
 <meta property="og:site_name" content="Cooperliu&#39;s Blogs">
-<meta property="og:description" content="Dotnet开源实战指南什么是Abp？Event Driven Architecture 事件驱动架构 Service-oriented architecture 面向服务架构 业务服务结构图 服务部署网络拓扑图 开发模式转变  前后端分离，前端SPA化，后端服务化，独立部署 Git分支策略  监控工具，日志分析工具  DevOps实践  TFS 敏捷开发管理 持续集成 发布过程管理  日志分析">
+<meta property="og:description" content="DDD领域服务Abp框架中应用1.领域服务（Domain Services） 领域服务 负责表达领域业务操作与规则，一个良好的领域服务设计，具备以下三个特点  领域操作与规则涉及到的领域概念既不属于实体（Entity）的一部分，也不属于值对象的一部分。  The interface is defined in terms of other elements of the domain model">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-31T14:53:20.156Z">
+<meta property="og:updated_time" content="2018-06-01T03:04:46.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Abp Architecture Learning">
-<meta name="twitter:description" content="Dotnet开源实战指南什么是Abp？Event Driven Architecture 事件驱动架构 Service-oriented architecture 面向服务架构 业务服务结构图 服务部署网络拓扑图 开发模式转变  前后端分离，前端SPA化，后端服务化，独立部署 Git分支策略  监控工具，日志分析工具  DevOps实践  TFS 敏捷开发管理 持续集成 发布过程管理  日志分析">
+<meta name="twitter:title" content="Domain-Driven-Design-In-Abp-Framework">
+<meta name="twitter:description" content="DDD领域服务Abp框架中应用1.领域服务（Domain Services） 领域服务 负责表达领域业务操作与规则，一个良好的领域服务设计，具备以下三个特点  领域操作与规则涉及到的领域概念既不属于实体（Entity）的一部分，也不属于值对象的一部分。  The interface is defined in terms of other elements of the domain model">
 
 
 
@@ -135,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://cooperliu.github.io/blogs.io/2018/05/18/Abp-Architecture-Learning/"/>
+  <link rel="canonical" href="https://cooperliu.github.io/blogs.io/2018/05/31/Domain-Driven-Design-In-Abp-Framework/"/>
 
 
 
 
 
-  <title>Abp Architecture Learning | Cooperliu's Blogs</title>
+  <title>Domain-Driven-Design-In-Abp-Framework | Cooperliu's Blogs</title>
   
 
 
@@ -248,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2018/05/18/Abp-Architecture-Learning/">
+    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2018/05/31/Domain-Driven-Design-In-Abp-Framework/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cooperliu">
@@ -265,7 +266,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Abp Architecture Learning</h1>
+          <h1 class="post-title" itemprop="name headline">Domain-Driven-Design-In-Abp-Framework</h1>
         
 
         <div class="post-meta">
@@ -277,8 +278,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T22:10:06+08:00">
-                2018-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T22:55:41+08:00">
+                2018-05-31
               </time>
             
 
@@ -315,34 +316,21 @@
       
 
       
-        <h1 id="Dotnet开源实战指南"><a href="#Dotnet开源实战指南" class="headerlink" title="Dotnet开源实战指南"></a>Dotnet开源实战指南</h1><h2 id="什么是Abp？"><a href="#什么是Abp？" class="headerlink" title="什么是Abp？"></a>什么是Abp？</h2><p>Event Driven Architecture 事件驱动架构</p>
-<p>Service-oriented architecture 面向服务架构</p>
-<p>业务服务结构图</p>
-<p>服务部署网络拓扑图</p>
-<p>开发模式转变</p>
-<ul>
-<li>前后端分离，前端SPA化，后端服务化，独立部署</li>
-<li>Git分支策略 </li>
-<li>监控工具，日志分析工具</li>
-</ul>
-<p>DevOps实践</p>
-<ul>
-<li>TFS 敏捷开发管理</li>
-<li>持续集成</li>
-<li>发布过程管理</li>
-</ul>
-<p>日志分析</p>
-<ul>
-<li>日志记录</li>
-<li>日志收集</li>
-<li>日志查询分析</li>
-</ul>
-<p>分布式消息管理</p>
-<ul>
-<li>分布式消息幂等</li>
-<li>分布式相同消息执行顺序</li>
-<li>分布式不同消息执行顺序</li>
-</ul>
+        <h1 id="DDD领域服务Abp框架中应用"><a href="#DDD领域服务Abp框架中应用" class="headerlink" title="DDD领域服务Abp框架中应用"></a>DDD领域服务Abp框架中应用</h1><h2 id="1-领域服务（Domain-Services）"><a href="#1-领域服务（Domain-Services）" class="headerlink" title="1.领域服务（Domain Services）"></a>1.领域服务（Domain Services）</h2><blockquote>
+<p><strong>领域服务</strong></p>
+<p>负责表达领域业务操作与规则，一个良好的领域服务设计，具备以下三个特点</p>
+<ol>
+<li><p>领域操作与规则涉及到的领域概念既不属于实体（Entity）的一部分，也不属于值对象的一部分。</p>
+</li>
+<li><p>The <strong>interface</strong> is defined in terms of other elements of the <strong>domain model</strong> 。</p>
+</li>
+<li><p>领域操作是无状态。</p>
+<p>​                                            ———- Eric Evans</p>
+</li>
+</ol>
+</blockquote>
+<p>领域服务处理领域对象，如实体（Entity）或者值类型，并不像应用层服务处理DTO。</p>
+<p>领域服务可以被应用层服务或者其他领域服务调用，而不能直接在展现层使用。展现层可以调用应用层。</p>
 
       
     </div>
@@ -358,6 +346,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/blogs.io/tags/DDD-Abp/" rel="tag"># DDD,Abp</a>
+          
+        </div>
+      
 
       
       
@@ -367,8 +361,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blogs.io/2017/08/30/abp-exception-handling/" rel="next" title="Abp 业务异常及业务异常处理">
-                <i class="fa fa-chevron-left"></i> Abp 业务异常及业务异常处理
+              <a href="/blogs.io/2018/05/29/wepay-cash-pay-to-bank/" rel="next" title="微信提现到银行卡开发过程">
+                <i class="fa fa-chevron-left"></i> 微信提现到银行卡开发过程
               </a>
             
           </div>
@@ -377,8 +371,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blogs.io/2018/05/29/wepay-cash-pay-to-bank/" rel="prev" title="微信提现到银行卡开发过程">
-                微信提现到银行卡开发过程 <i class="fa fa-chevron-right"></i>
+              <a href="/blogs.io/2018/11/20/Abp-Auditing/" rel="prev" title="Abp-Auditing">
+                Abp-Auditing <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -506,7 +500,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dotnet开源实战指南"><span class="nav-number">1.</span> <span class="nav-text">Dotnet开源实战指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Abp？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Abp？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DDD领域服务Abp框架中应用"><span class="nav-number">1.</span> <span class="nav-text">DDD领域服务Abp框架中应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-领域服务（Domain-Services）"><span class="nav-number">1.1.</span> <span class="nav-text">1.领域服务（Domain Services）</span></a></li></ol></li></ol></div>
             
 
           </div>

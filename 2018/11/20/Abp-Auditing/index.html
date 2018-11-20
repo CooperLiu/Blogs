@@ -79,7 +79,7 @@
 <link href="/blogs.io/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Abp,DDD,donet,donet core" />
+  <meta name="keywords" content="Abp,Api,Auditing,审计," />
 
 
 
@@ -95,17 +95,18 @@
 
 
 
-<meta name="description" content="Dotnet开源实战指南什么是Abp？Event Driven Architecture 事件驱动架构 Service-oriented architecture 面向服务架构 业务服务结构图 服务部署网络拓扑图 开发模式转变  前后端分离，前端SPA化，后端服务化，独立部署 Git分支策略  监控工具，日志分析工具  DevOps实践  TFS 敏捷开发管理 持续集成 发布过程管理  日志分析">
+<meta name="description" content="基于Abp企业级应用开发–审计审计日志，是系统开发过程中，必不可少，它如实的反应程序实际运行状况。在实际开发过程中，我们把审计分为以下几种审计  应用程序审计 Api接口调用审计日志  异步消息发布订阅审计   数据变更审计 业务流程审计  应用程序审计 - Api接口调用审计日志   关注点 说明     调用用户标识 UserId   调用服务 ServiceName   调用服务方法 Met">
+<meta name="keywords" content="Abp,Api,Auditing,审计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Abp Architecture Learning">
-<meta property="og:url" content="https://cooperliu.github.io/blogs.io/2018/05/18/Abp-Architecture-Learning/index.html">
+<meta property="og:title" content="Abp-Auditing">
+<meta property="og:url" content="https://cooperliu.github.io/blogs.io/2018/11/20/Abp-Auditing/index.html">
 <meta property="og:site_name" content="Cooperliu&#39;s Blogs">
-<meta property="og:description" content="Dotnet开源实战指南什么是Abp？Event Driven Architecture 事件驱动架构 Service-oriented architecture 面向服务架构 业务服务结构图 服务部署网络拓扑图 开发模式转变  前后端分离，前端SPA化，后端服务化，独立部署 Git分支策略  监控工具，日志分析工具  DevOps实践  TFS 敏捷开发管理 持续集成 发布过程管理  日志分析">
+<meta property="og:description" content="基于Abp企业级应用开发–审计审计日志，是系统开发过程中，必不可少，它如实的反应程序实际运行状况。在实际开发过程中，我们把审计分为以下几种审计  应用程序审计 Api接口调用审计日志  异步消息发布订阅审计   数据变更审计 业务流程审计  应用程序审计 - Api接口调用审计日志   关注点 说明     调用用户标识 UserId   调用服务 ServiceName   调用服务方法 Met">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-31T14:53:20.156Z">
+<meta property="og:updated_time" content="2018-11-20T15:01:52.649Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Abp Architecture Learning">
-<meta name="twitter:description" content="Dotnet开源实战指南什么是Abp？Event Driven Architecture 事件驱动架构 Service-oriented architecture 面向服务架构 业务服务结构图 服务部署网络拓扑图 开发模式转变  前后端分离，前端SPA化，后端服务化，独立部署 Git分支策略  监控工具，日志分析工具  DevOps实践  TFS 敏捷开发管理 持续集成 发布过程管理  日志分析">
+<meta name="twitter:title" content="Abp-Auditing">
+<meta name="twitter:description" content="基于Abp企业级应用开发–审计审计日志，是系统开发过程中，必不可少，它如实的反应程序实际运行状况。在实际开发过程中，我们把审计分为以下几种审计  应用程序审计 Api接口调用审计日志  异步消息发布订阅审计   数据变更审计 业务流程审计  应用程序审计 - Api接口调用审计日志   关注点 说明     调用用户标识 UserId   调用服务 ServiceName   调用服务方法 Met">
 
 
 
@@ -135,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://cooperliu.github.io/blogs.io/2018/05/18/Abp-Architecture-Learning/"/>
+  <link rel="canonical" href="https://cooperliu.github.io/blogs.io/2018/11/20/Abp-Auditing/"/>
 
 
 
 
 
-  <title>Abp Architecture Learning | Cooperliu's Blogs</title>
+  <title>Abp-Auditing | Cooperliu's Blogs</title>
   
 
 
@@ -248,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2018/05/18/Abp-Architecture-Learning/">
+    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2018/11/20/Abp-Auditing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cooperliu">
@@ -265,7 +266,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Abp Architecture Learning</h1>
+          <h1 class="post-title" itemprop="name headline">Abp-Auditing</h1>
         
 
         <div class="post-meta">
@@ -277,8 +278,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T22:10:06+08:00">
-                2018-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T22:08:58+08:00">
+                2018-11-20
               </time>
             
 
@@ -315,34 +316,118 @@
       
 
       
-        <h1 id="Dotnet开源实战指南"><a href="#Dotnet开源实战指南" class="headerlink" title="Dotnet开源实战指南"></a>Dotnet开源实战指南</h1><h2 id="什么是Abp？"><a href="#什么是Abp？" class="headerlink" title="什么是Abp？"></a>什么是Abp？</h2><p>Event Driven Architecture 事件驱动架构</p>
-<p>Service-oriented architecture 面向服务架构</p>
-<p>业务服务结构图</p>
-<p>服务部署网络拓扑图</p>
-<p>开发模式转变</p>
+        <h1 id="基于Abp企业级应用开发–审计"><a href="#基于Abp企业级应用开发–审计" class="headerlink" title="基于Abp企业级应用开发–审计"></a>基于Abp企业级应用开发–审计</h1><p>审计日志，是系统开发过程中，必不可少，它如实的反应程序实际运行状况。在实际开发过程中，我们把审计分为以下几种审计</p>
 <ul>
-<li>前后端分离，前端SPA化，后端服务化，独立部署</li>
-<li>Git分支策略 </li>
-<li>监控工具，日志分析工具</li>
+<li>应用程序审计<ul>
+<li>Api接口调用审计日志 </li>
+<li>异步消息发布订阅审计</li>
 </ul>
-<p>DevOps实践</p>
-<ul>
-<li>TFS 敏捷开发管理</li>
-<li>持续集成</li>
-<li>发布过程管理</li>
+</li>
+<li>数据变更审计</li>
+<li>业务流程审计</li>
 </ul>
-<p>日志分析</p>
-<ul>
-<li>日志记录</li>
-<li>日志收集</li>
-<li>日志查询分析</li>
-</ul>
-<p>分布式消息管理</p>
-<ul>
-<li>分布式消息幂等</li>
-<li>分布式相同消息执行顺序</li>
-<li>分布式不同消息执行顺序</li>
-</ul>
+<h2 id="应用程序审计-Api接口调用审计日志"><a href="#应用程序审计-Api接口调用审计日志" class="headerlink" title="应用程序审计 - Api接口调用审计日志"></a>应用程序审计 - Api接口调用审计日志</h2><table>
+<thead>
+<tr>
+<th>关注点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>调用用户标识</td>
+<td>UserId</td>
+</tr>
+<tr>
+<td>调用服务</td>
+<td>ServiceName</td>
+</tr>
+<tr>
+<td>调用服务方法</td>
+<td>MethodName</td>
+</tr>
+<tr>
+<td>调用参数</td>
+<td>Parameters</td>
+</tr>
+<tr>
+<td>调用时间</td>
+<td>ExecutionTime</td>
+</tr>
+<tr>
+<td>执行时长</td>
+<td>ExecutionDuration</td>
+</tr>
+<tr>
+<td>客户端IP</td>
+<td>ClientIpAddress</td>
+</tr>
+<tr>
+<td>客户端名称</td>
+<td>ClientName</td>
+</tr>
+<tr>
+<td>调用端标识</td>
+<td>UserAgent/BrowserInfo</td>
+</tr>
+<tr>
+<td>异常信息</td>
+<td>Exception</td>
+</tr>
+<tr>
+<td>服务器Ip</td>
+<td>ServerIp</td>
+</tr>
+<tr>
+<td>服务器名称</td>
+<td>ServerName</td>
+</tr>
+<tr>
+<td>服务器信息</td>
+<td>ServerVersion</td>
+</tr>
+</tbody>
+</table>
+<h2 id="应用程序审计-异步消息发布订阅审计"><a href="#应用程序审计-异步消息发布订阅审计" class="headerlink" title="应用程序审计 - 异步消息发布订阅审计"></a>应用程序审计 - 异步消息发布订阅审计</h2><table>
+<thead>
+<tr>
+<th>关注点</th>
+<th>字段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>消息类型</td>
+<td>Publish/Consume</td>
+</tr>
+<tr>
+<td>消息Id</td>
+<td>MessageId</td>
+</tr>
+<tr>
+<td>发布者名称</td>
+<td>MachineName</td>
+</tr>
+<tr>
+<td>消费队列</td>
+<td>Queue</td>
+</tr>
+<tr>
+<td>审计时间</td>
+<td>AuditedTime</td>
+</tr>
+<tr>
+<td>消息处理时间</td>
+<td>HandledTime</td>
+</tr>
+<tr>
+<td>消息体</td>
+<td>MessageBody</td>
+</tr>
+</tbody>
+</table>
+<h2 id="数据变更审计"><a href="#数据变更审计" class="headerlink" title="数据变更审计"></a>数据变更审计</h2><p>对于数据变更敏感的业务数据，如价格，数量等字段，进行数据变更（Update,Delete）记录，记录前后变更值。</p>
+<h2 id="业务流程审计"><a href="#业务流程审计" class="headerlink" title="业务流程审计"></a>业务流程审计</h2><p>在关键业务节点，触发业务事件，业务流程审计订阅业务变更事件，审计业务流程变更。</p>
 
       
     </div>
@@ -358,6 +443,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/blogs.io/tags/Abp-Api-Auditing-审计/" rel="tag"># Abp,Api,Auditing,审计</a>
+          
+        </div>
+      
 
       
       
@@ -367,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blogs.io/2017/08/30/abp-exception-handling/" rel="next" title="Abp 业务异常及业务异常处理">
-                <i class="fa fa-chevron-left"></i> Abp 业务异常及业务异常处理
+              <a href="/blogs.io/2018/05/31/Domain-Driven-Design-In-Abp-Framework/" rel="next" title="Domain-Driven-Design-In-Abp-Framework">
+                <i class="fa fa-chevron-left"></i> Domain-Driven-Design-In-Abp-Framework
               </a>
             
           </div>
@@ -376,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blogs.io/2018/05/29/wepay-cash-pay-to-bank/" rel="prev" title="微信提现到银行卡开发过程">
-                微信提现到银行卡开发过程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -506,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dotnet开源实战指南"><span class="nav-number">1.</span> <span class="nav-text">Dotnet开源实战指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Abp？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Abp？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基于Abp企业级应用开发–审计"><span class="nav-number">1.</span> <span class="nav-text">基于Abp企业级应用开发–审计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用程序审计-Api接口调用审计日志"><span class="nav-number">1.1.</span> <span class="nav-text">应用程序审计 - Api接口调用审计日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用程序审计-异步消息发布订阅审计"><span class="nav-number">1.2.</span> <span class="nav-text">应用程序审计 - 异步消息发布订阅审计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据变更审计"><span class="nav-number">1.3.</span> <span class="nav-text">数据变更审计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务流程审计"><span class="nav-number">1.4.</span> <span class="nav-text">业务流程审计</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -245,6 +245,371 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2018/11/20/Abp-Auditing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cooperliu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blogs.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cooperliu's Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blogs.io/2018/11/20/Abp-Auditing/" itemprop="url">Abp-Auditing</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T22:08:58+08:00">
+                2018-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="基于Abp企业级应用开发–审计"><a href="#基于Abp企业级应用开发–审计" class="headerlink" title="基于Abp企业级应用开发–审计"></a>基于Abp企业级应用开发–审计</h1><p>审计日志，是系统开发过程中，必不可少，它如实的反应程序实际运行状况。在实际开发过程中，我们把审计分为以下几种审计</p>
+<ul>
+<li>应用程序审计<ul>
+<li>Api接口调用审计日志 </li>
+<li>异步消息发布订阅审计</li>
+</ul>
+</li>
+<li>数据变更审计</li>
+<li>业务流程审计</li>
+</ul>
+<h2 id="应用程序审计-Api接口调用审计日志"><a href="#应用程序审计-Api接口调用审计日志" class="headerlink" title="应用程序审计 - Api接口调用审计日志"></a>应用程序审计 - Api接口调用审计日志</h2><table>
+<thead>
+<tr>
+<th>关注点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>调用用户标识</td>
+<td>UserId</td>
+</tr>
+<tr>
+<td>调用服务</td>
+<td>ServiceName</td>
+</tr>
+<tr>
+<td>调用服务方法</td>
+<td>MethodName</td>
+</tr>
+<tr>
+<td>调用参数</td>
+<td>Parameters</td>
+</tr>
+<tr>
+<td>调用时间</td>
+<td>ExecutionTime</td>
+</tr>
+<tr>
+<td>执行时长</td>
+<td>ExecutionDuration</td>
+</tr>
+<tr>
+<td>客户端IP</td>
+<td>ClientIpAddress</td>
+</tr>
+<tr>
+<td>客户端名称</td>
+<td>ClientName</td>
+</tr>
+<tr>
+<td>调用端标识</td>
+<td>UserAgent/BrowserInfo</td>
+</tr>
+<tr>
+<td>异常信息</td>
+<td>Exception</td>
+</tr>
+<tr>
+<td>服务器Ip</td>
+<td>ServerIp</td>
+</tr>
+<tr>
+<td>服务器名称</td>
+<td>ServerName</td>
+</tr>
+<tr>
+<td>服务器信息</td>
+<td>ServerVersion</td>
+</tr>
+</tbody>
+</table>
+<h2 id="应用程序审计-异步消息发布订阅审计"><a href="#应用程序审计-异步消息发布订阅审计" class="headerlink" title="应用程序审计 - 异步消息发布订阅审计"></a>应用程序审计 - 异步消息发布订阅审计</h2><table>
+<thead>
+<tr>
+<th>关注点</th>
+<th>字段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>消息类型</td>
+<td>Publish/Consume</td>
+</tr>
+<tr>
+<td>消息Id</td>
+<td>MessageId</td>
+</tr>
+<tr>
+<td>发布者名称</td>
+<td>MachineName</td>
+</tr>
+<tr>
+<td>消费队列</td>
+<td>Queue</td>
+</tr>
+<tr>
+<td>审计时间</td>
+<td>AuditedTime</td>
+</tr>
+<tr>
+<td>消息处理时间</td>
+<td>HandledTime</td>
+</tr>
+<tr>
+<td>消息体</td>
+<td>MessageBody</td>
+</tr>
+</tbody>
+</table>
+<h2 id="数据变更审计"><a href="#数据变更审计" class="headerlink" title="数据变更审计"></a>数据变更审计</h2><p>对于数据变更敏感的业务数据，如价格，数量等字段，进行数据变更（Update,Delete）记录，记录前后变更值。</p>
+<h2 id="业务流程审计"><a href="#业务流程审计" class="headerlink" title="业务流程审计"></a>业务流程审计</h2><p>在关键业务节点，触发业务事件，业务流程审计订阅业务变更事件，审计业务流程变更。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2018/05/31/Domain-Driven-Design-In-Abp-Framework/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cooperliu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blogs.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cooperliu's Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blogs.io/2018/05/31/Domain-Driven-Design-In-Abp-Framework/" itemprop="url">Domain-Driven-Design-In-Abp-Framework</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T22:55:41+08:00">
+                2018-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="DDD领域服务Abp框架中应用"><a href="#DDD领域服务Abp框架中应用" class="headerlink" title="DDD领域服务Abp框架中应用"></a>DDD领域服务Abp框架中应用</h1><h2 id="1-领域服务（Domain-Services）"><a href="#1-领域服务（Domain-Services）" class="headerlink" title="1.领域服务（Domain Services）"></a>1.领域服务（Domain Services）</h2><blockquote>
+<p><strong>领域服务</strong></p>
+<p>负责表达领域业务操作与规则，一个良好的领域服务设计，具备以下三个特点</p>
+<ol>
+<li><p>领域操作与规则涉及到的领域概念既不属于实体（Entity）的一部分，也不属于值对象的一部分。</p>
+</li>
+<li><p>The <strong>interface</strong> is defined in terms of other elements of the <strong>domain model</strong> 。</p>
+</li>
+<li><p>领域操作是无状态。</p>
+<p>​                                            ———- Eric Evans</p>
+</li>
+</ol>
+</blockquote>
+<p>领域服务处理领域对象，如实体（Entity）或者值类型，并不像应用层服务处理DTO。</p>
+<p>领域服务可以被应用层服务或者其他领域服务调用，而不能直接在展现层使用。展现层可以调用应用层。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://cooperliu.github.io/blogs.io/blogs.io/2018/05/29/wepay-cash-pay-to-bank/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -714,7 +1079,7 @@
       
         
           
-            <h1 id="Abp异常处理"><a href="#Abp异常处理" class="headerlink" title="Abp异常处理"></a>Abp异常处理</h1><p>在使用Abp框架中，经常会遇到业务异常及系统异常处理，今天结合实际开发过程中，介绍一下如何在Abp框架中定义业务异常、处理业务异常及处理系统异常。</p>
+            <h1 id="基于Abp企业级应用开发–异常处理"><a href="#基于Abp企业级应用开发–异常处理" class="headerlink" title="基于Abp企业级应用开发–异常处理"></a>基于Abp企业级应用开发–异常处理</h1><p>在使用Abp框架中，经常会遇到业务异常及系统异常处理，今天结合实际开发过程中，介绍一下如何在Abp框架中定义业务异常、处理业务异常及处理系统异常。</p>
 <h2 id="Abp常用异常"><a href="#Abp常用异常" class="headerlink" title="Abp常用异常"></a>Abp常用异常</h2><ul>
 <li>AbpException</li>
 <li>UserFriendlyException    <blockquote>
@@ -1020,7 +1385,7 @@ namespace Company.Project
             
               <a href="/blogs.io/archives/">
             
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1033,7 +1398,7 @@ namespace Company.Project
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
